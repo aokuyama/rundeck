@@ -6,10 +6,10 @@ services:
         links:
           - mysql
         environment:
-            RUNDECK_DATABASE_DRIVER: com.mysql.jdbc.Driver
-            RUNDECK_DATABASE_USERNAME: rundeck
-            RUNDECK_DATABASE_PASSWORD: rundeck
-            RUNDECK_DATABASE_URL: jdbc:mysql://mysql/rundeck?autoReconnect=true&useSSL=false
+            RUNDECK_DATABASE_DRIVER: ${RUNDECK_DATABASE_DRIVER}
+            RUNDECK_DATABASE_USERNAME: ${RUNDECK_DATABASE_USERNAME}
+            RUNDECK_DATABASE_PASSWORD: ${RUNDECK_DATABASE_PASSWORD}
+            RUNDECK_DATABASE_URL: ${RUNDECK_DATABASE_URL}
             RUNDECK_GRAILS_URL: ${RUNDECK_GRAILS_URL}
         volumes:
           - ${RUNDECK_LICENSE_FILE:-/dev/null}:/home/rundeck/etc/rundeckpro-license.key
